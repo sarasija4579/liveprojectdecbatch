@@ -1,0 +1,26 @@
+package Sarasija.Chinni;
+
+import org.testng.annotations.Test;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
+
+public class FacebookLoginjs {
+public WebDriver driver;
+  @Test
+  public void f() {
+	 JavascriptExecutor js=(JavascriptExecutor)driver;
+	 js.executeAsyncScript("document.getElementById('email').value='sarasija");
+	 js.executeAsyncScript("document.getElementById('pass')".value='Mungarasarasija@gmail');
+	 js.executeAsyncScript("document.getElementById('u_0_4_4Z').click()");
+  }
+  @BeforeTest
+  public void beforeTest() {
+	 System.setProperty("webDriver.chrome.driver", "D://library//chromedriver.exe");
+	 driver=new ChromeDriver();
+	 driver.get("http://facebook.com");
+	 driver.manage().window().maximize();
+  }
+
+}
